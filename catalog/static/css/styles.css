@@ -1,0 +1,6 @@
+img[class*=d-block]{
+    object-fit: cover;
+    vertical-align: middle;
+    border-style: none;
+    height: 60vh;
+}

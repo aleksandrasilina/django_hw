@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skystore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Site Icon -->
+    <link rel="shortcut icon" href="/static/images/favicon.png" type="image/x-icon">
+    <!-- fontawesome.com Icons -->
+    <script src="https://kit.fontawesome.com/160e143d24.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow">
+        <img src="/static/images/favicon.png" width="30" alt="">
+        <h5><a class="nav-link mt-2 fw-normal ms-2" href="/">Магазин</a></h5>
+
+        <nav class="navbar navbar-expand-lg ms-5">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Каталог</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active link-opacity-10-hover" href="/contacts/"><i
+                                    class="fa-sharp fa-solid fa-location-arrow"></i> Контакты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#"><i class="fa-solid fa-user"></i> Войти</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"> <i
+                                    class="fa-solid fa-cart-shopping"></i> Корзина</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-heart"></i>
+                                Избранное</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex ms-5">
+                        <input class="form-control me-2" type="search" placeholder="Поиск по сайту" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"><i
+                                class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="pricing-header px-3 py-3 pt-md-2 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Контакты</h1>
+</div>
+
+<div class="container">
+    <div class="row justify-content-around">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header text-muted" style="background-color: #FFFFFF">
+                    <h4 class="my-0 font-weight-normal">Контактная информация</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">123456, г. Москва, ул. Московская, д. 1</li>
+                        <li class="list-group-item"><br>+7 (495) 123 45 67</li>
+                        <li class="list-group-item"><br>magazin@email.com</li>
+                        <li class="list-group-item"><br>Ежедневно с 10:00 до 22:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header text-muted" style="background-color: #FFFFFF">
+                    <h4 class="my-0 font-weight-normal">Свяжитесь с нами</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="" class="form-floating">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя"
+                                   required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="email" class="form-control" id="email"
+                                   placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control" id="message"
+                                      placeholder="Сообщение" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-block btn-outline-success">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-flex">
+        <div style="position:relative;overflow:hidden;"><a
+                href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
+                href="https://yandex.ru/maps/geo/moskva/53166393/?ll=37.617700%2C55.755863&utm_medium=mapframe&utm_source=maps&z=10"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">Москва — Яндекс Карты</a>
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617700%2C55.755863&mode=poi&poi%5Bpoint%5D=37.617617%2C55.755811&poi%5Buri%5D=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE2NjM5MxIa0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAiCg14eBZCFfUFX0I%2C&z=10"
+                    width="100%" height="400" frameborder="1" style="position:relative;"></iframe>
+        </div>
+    </div>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                Магазин
+                <small class="d-block mb-3 me-2 text-muted">&copy; 2024</small>
+            </div>
+            <div class="col-6 col-md text-start">
+                <h5>Покупателям</h5>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                           href="#">Каталог</a></li>
+                    <li>
+                        <a class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                           href="#">Доставка</a></li>
+                    <li>
+                        <a class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                           href="#">Оплата</a></li>
+                    <li>
+                        <a class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                           href="#">Личный кабинет</a></li>
+                    <li>
+                        <a class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                           href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md text-start">
+                <h5>О нас</h5>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                           href="/contacts/">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md text-start">
+                <h5>Мы в соцсетях</h5>
+                <div class="row">
+                    <div class="col-2" style="font-size: 30px"><a class="text-muted" href="#"><i
+                            class="fa-brands fa-vk"></i></a></div>
+                    <div class="col-2" style="font-size: 30px"><a class="text-muted" href="#"><i
+                            class="fa-brands fa-youtube"></i></a></div>
+                    <div class="col-2" style="font-size: 30px"><a class="text-muted" href="#"><i
+                            class="fa-brands fa-telegram"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Овощи",
+      "description": "Очень полезно"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Фрукты",
+      "description": "Очень вкусно"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Огурцы",
+      "description": null,
+      "photo": "",
+      "category": 1,
+      "price": "100.00",
+      "created_at": "2024-07-05T12:12:09.712Z",
+      "updated_at": "2024-07-05T12:12:09.712Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Персики",
+      "description": null,
+      "photo": "",
+      "category": 2,
+      "price": "150.00",
+      "created_at": "2024-07-05T12:14:12.946Z",
+      "updated_at": "2024-07-05T12:14:12.946Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Морковь",
+      "description": null,
+      "photo": "",
+      "category": 1,
+      "price": "50.00",
+      "created_at": "2024-07-05T12:19:10.751Z",
+      "updated_at": "2024-07-05T12:19:10.751Z"
+    }
+  }
+]

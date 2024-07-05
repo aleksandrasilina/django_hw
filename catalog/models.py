@@ -53,6 +53,11 @@ class Product(models.Model):
         verbose_name="Дата изменения",
         help_text="Введите дату последнего изменения продукта",
     )
+    manufactured_at = models.DateTimeField(
+        default=timezone.now,
+        verbose_name="Дата производства",
+        help_text="Введите дату производства продукта",
+    )
 
     def __str__(self):
         return self.name

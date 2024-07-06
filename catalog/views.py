@@ -19,4 +19,10 @@ def contacts(request):
         message = request.POST.get('message')
         with open('messages.txt', 'a') as file:
             file.write(f'{name}({email}): {message}\n')
-    return render(request, 'contacts.html')
+
+    contacts_data = {}
+    with open('contacts.json', 'r', encoding='utf-8') as file:
+        for i, contact in enumerate(json.load(file), 1):
+            contacts_data[str(i)] = contact['fields']
+
+    return render(request, 'contacts.html', context=contacts_data)

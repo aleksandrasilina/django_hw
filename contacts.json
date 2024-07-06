@@ -1,0 +1,29 @@
+[
+  {
+    "model": "catalog.contact",
+    "pk": 1,
+    "fields": {
+      "name": "Иван",
+      "email": "ivan@email.com",
+      "message": "Hello from Ivan!"
+    }
+  },
+  {
+    "model": "catalog.contact",
+    "pk": 2,
+    "fields": {
+      "name": "Антон",
+      "email": "anton@email.com",
+      "message": "Hello from Anton!"
+    }
+  },
+  {
+    "model": "catalog.contact",
+    "pk": 3,
+    "fields": {
+      "name": "Яков",
+      "email": "yakov@email.com",
+      "message": "Hello fromYakov!"
+    }
+  }
+]

@@ -20,85 +20,125 @@
     "pk": 3,
     "fields": {
       "name": "Ягоды",
-      "description": ""
+      "description": "Обычно маленькие"
     }
   },
   {
     "model": "catalog.product",
-    "pk": 1,
+    "pk": 7,
     "fields": {
       "name": "Огурцы",
-      "description": null,
-      "photo": "",
+      "description": "Зеленые длинные",
+      "photo": "catalog/photo/cucumbers.jpg",
       "category": 1,
-      "price": "100.00",
-      "created_at": "2024-07-05T12:12:09.712Z",
-      "updated_at": "2024-07-05T12:12:09.712Z"
+      "price": "80.00",
+      "created_at": "2024-07-11T14:28:07Z",
+      "updated_at": "2024-07-11T14:28:07Z"
     }
   },
   {
     "model": "catalog.product",
-    "pk": 2,
+    "pk": 8,
+    "fields": {
+      "name": "Помидоры",
+      "description": "Красные круглые",
+      "photo": "catalog/photo/tomatos.jpg",
+      "category": 1,
+      "price": "150.00",
+      "created_at": "2024-07-11T14:33:51Z",
+      "updated_at": "2024-07-11T14:33:51Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
     "fields": {
       "name": "Персики",
-      "description": null,
-      "photo": "",
+      "description": "Круглые пушистые",
+      "photo": "catalog/photo/peaches.jpg",
       "category": 2,
-      "price": "150.00",
-      "created_at": "2024-07-05T12:14:12.946Z",
-      "updated_at": "2024-07-05T12:14:12.946Z"
+      "price": "200.00",
+      "created_at": "2024-07-11T14:34:16Z",
+      "updated_at": "2024-07-11T14:34:16Z"
     }
   },
   {
     "model": "catalog.product",
-    "pk": 3,
+    "pk": 10,
     "fields": {
       "name": "Морковь",
-      "description": null,
-      "photo": "",
+      "description": "Оранжевая длинная",
+      "photo": "catalog/photo/carrot.jpg",
       "category": 1,
       "price": "50.00",
-      "created_at": "2024-07-05T12:19:10.751Z",
-      "updated_at": "2024-07-05T12:19:10.751Z"
+      "created_at": "2024-07-11T14:34:50Z",
+      "updated_at": "2024-07-11T14:34:50Z"
     }
   },
   {
     "model": "catalog.product",
-    "pk": 4,
-    "fields": {
-      "name": "Клубника",
-      "description": "",
-      "photo": "",
-      "category": 3,
-      "price": "400.00",
-      "created_at": "2024-07-06T07:25:40Z",
-      "updated_at": "2024-07-06T07:25:40Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 5,
-    "fields": {
-      "name": "Арбуз",
-      "description": "Зеленый полосатый",
-      "photo": "catalog/photo/watermelon.jpg",
-      "category": 3,
-      "price": "50.00",
-      "created_at": "2024-07-06T07:26:21Z",
-      "updated_at": "2024-07-06T07:26:21Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 6,
+    "pk": 11,
     "fields": {
       "name": "Бананы",
-      "description": "Желтые",
-      "photo": "catalog/photo/bananas.jpg",
+      "description": "Желтые длинные",
+      "photo": "catalog/photo/bananas_Zb8NGKR.jpg",
       "category": 2,
-      "price": "70.00",
-      "created_at": "2024-07-06T07:37:42Z",
-      "updated_at": "2024-07-06T07:37:42Z"
+      "price": "100.00",
+      "created_at": "2024-07-11T14:35:18Z",
+      "updated_at": "2024-07-11T14:35:18Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "name": "Клубника",
+      "description": "Красная вкусная",
+      "photo": "catalog/photo/strawberry.jpg",
+      "category": 3,
+      "price": "400.00",
+      "created_at": "2024-07-11T14:35:48Z",
+      "updated_at": "2024-07-11T14:35:48Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "name": "Арбуз",
+      "description": "Круглый полосатый",
+      "photo": "catalog/photo/watermelon_6dP5cgy.jpg",
+      "category": 3,
+      "price": "50.00",
+      "created_at": "2024-07-11T14:36:32Z",
+      "updated_at": "2024-07-11T14:36:32Z"
+    }
+  },
+  {
+    "model": "catalog.contact",
+    "pk": 1,
+    "fields": {
+      "name": "Иван",
+      "email": "ivan@email.com",
+      "message": "Hello from Ivan!"
+    }
+  },
+  {
+    "model": "catalog.contact",
+    "pk": 2,
+    "fields": {
+      "name": "Антон",
+      "email": "anton@email.com",
+      "message": "Hello from Anton!"
+    }
+  },
+  {
+    "model": "catalog.contact",
+    "pk": 3,
+    "fields": {
+      "name": "Яков",
+      "email": "yakov@email.com",
+      "message": "Hello fromYakov!"
     }
   }
 ]

@@ -1,7 +1,7 @@
 import json
 from pprint import pprint
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from catalog.models import Product
 
@@ -28,4 +28,6 @@ def contacts(request):
 
 
 def product_detail(request, pk):
-    return render(request, 'product_detail.html')
+    product = get_object_or_404(Product, pk=pk)
+    context = {"product": product}
+    return render(request, 'product_detail.html', context)

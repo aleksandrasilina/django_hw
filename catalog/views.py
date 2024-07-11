@@ -3,12 +3,11 @@ from pprint import pprint
 
 from django.shortcuts import render
 
+from catalog.models import Product
+
 
 def home(request):
-    with open("catalog.json", "r", encoding="utf-8") as file:
-        products = [product["fields"] for product in json.load(file) if product["model"] == "catalog.product"]
-        last_5_products = sorted(products, key=lambda x: x["created_at"], reverse=True)[:5]
-        pprint(last_5_products)
+    pprint(Product.objects.order_by("created_at")[1:6:-1])
     return render(request, 'home.html')
 
 
@@ -26,3 +25,7 @@ def contacts(request):
             contacts_data[str(i)] = contact['fields']
 
     return render(request, 'contacts.html', context=contacts_data)
+
+
+def product_detail(request, pk):
+    return render(request, 'product_detail.html')

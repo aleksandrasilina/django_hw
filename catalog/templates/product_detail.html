@@ -9,6 +9,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
+                <p class="card-text">Категория: {{ product.category }}</p>
                 <p class="card-text">Цена: {{ product.price }} руб/кг</p>
                 <a href="{% url 'catalog:home' %}" class="btn btn-outline-success">Назад</a>
                 <a href="#" class="btn btn-outline-success">В корзину</a>

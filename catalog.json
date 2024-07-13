@@ -25,7 +25,7 @@
   },
   {
     "model": "catalog.product",
-    "pk": 7,
+    "pk": 1,
     "fields": {
       "name": "Огурцы",
       "description": "Зеленые длинные",
@@ -38,7 +38,7 @@
   },
   {
     "model": "catalog.product",
-    "pk": 8,
+    "pk": 2,
     "fields": {
       "name": "Помидоры",
       "description": "Красные круглые",
@@ -51,7 +51,7 @@
   },
   {
     "model": "catalog.product",
-    "pk": 9,
+    "pk": 3,
     "fields": {
       "name": "Персики",
       "description": "Круглые пушистые",
@@ -64,7 +64,7 @@
   },
   {
     "model": "catalog.product",
-    "pk": 10,
+    "pk": 4,
     "fields": {
       "name": "Морковь",
       "description": "Оранжевая длинная",
@@ -77,11 +77,11 @@
   },
   {
     "model": "catalog.product",
-    "pk": 11,
+    "pk": 5,
     "fields": {
       "name": "Бананы",
       "description": "Желтые длинные",
-      "photo": "catalog/photo/bananas_Zb8NGKR.jpg",
+      "photo": "catalog/photo/bananas.jpg",
       "category": 2,
       "price": "100.00",
       "created_at": "2024-07-11T14:35:18Z",
@@ -90,7 +90,7 @@
   },
   {
     "model": "catalog.product",
-    "pk": 12,
+    "pk": 6,
     "fields": {
       "name": "Клубника",
       "description": "Красная вкусная",
@@ -103,15 +103,41 @@
   },
   {
     "model": "catalog.product",
-    "pk": 13,
+    "pk": 7,
     "fields": {
       "name": "Арбуз",
       "description": "Круглый полосатый",
-      "photo": "catalog/photo/watermelon_6dP5cgy.jpg",
+      "photo": "catalog/photo/watermelon.jpg",
       "category": 3,
       "price": "50.00",
       "created_at": "2024-07-11T14:36:32Z",
       "updated_at": "2024-07-11T14:36:32Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Тыква",
+      "description": "Большая оранжевая",
+      "photo": "catalog/photo/pumpkin.jpeg",
+      "category": 1,
+      "price": "100.00",
+      "created_at": "2024-07-12T21:11:44Z",
+      "updated_at": "2024-07-12T21:11:44Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "Брокколи",
+      "description": "Зеленая кудрявая",
+      "photo": "catalog/photo/broccoli.jpg",
+      "category": 1,
+      "price": "300.00",
+      "created_at": "2024-07-12T21:12:13Z",
+      "updated_at": "2024-07-12T21:12:13Z"
     }
   },
   {

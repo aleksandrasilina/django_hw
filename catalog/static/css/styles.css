@@ -4,3 +4,17 @@ img[class*=d-block]{
     border-style: none;
     height: 60vh;
 }
+
+.custom-link {
+color: #293133;
+}
+a:hover {
+color: green;
+}
+
+.nav-link {
+color: red;
+}
+a:hover {
+color: green;
+}

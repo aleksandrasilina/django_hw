@@ -1,0 +1,21 @@
+<nav>
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            {% if page.has_previous %}
+            <a class="page-link text-dark" href="?page={{ page.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+            {% endif %}
+        </li>
+        {% for p in products.paginator.page_range %}
+        <li class="page-item"><a class="{% if products.number == p %}bg-success text-white{% endif %} page-link text-dark" href="?page={{ p }}#section_1">{{ p }}</a></li>
+        {% endfor %}
+        <li class="page-item">
+            {% if page.has_next %}
+            <a class="page-link text-dark" href="?page={{ page.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+            {% endif %}
+        </li>
+    </ul>
+</nav>

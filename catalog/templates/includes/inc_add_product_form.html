@@ -1,3 +1,5 @@
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 <div class="d-flex mt-4">
     <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card mb-4 box-shadow">
@@ -30,11 +32,11 @@
                         <input type="text" name="price" class="form-control" placeholder="Введите цену продукта">
                         <span class="input-group-text" id="basic-addon2">руб/кг</span>
                     </div>
-<!--                    <div class="input-group mb-3">-->
-<!--                        <input name="photo" type="file" class="form-control" id="inputGroupFile02">-->
-<!--                        <label class="input-group-text text-muted" for="inputGroupFile02">Загрузите фото</label>-->
-<!--                    </div>-->
-                    {{ form.as_p }}
+                    <!--                    <div class="input-group mb-3">-->
+                    <!--                        <input name="photo" type="file" class="form-control" id="inputGroupFile02">-->
+                    <!--                        <label class="input-group-text text-muted" for="inputGroupFile02">Загрузите фото</label>-->
+                    <!--                    </div>-->
+                    {{ form | crispy}}
                     <button type="submit" class="btn btn-lg btn-block btn-outline-success">Отправить</button>
                 </form>
             </div>

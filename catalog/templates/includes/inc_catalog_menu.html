@@ -8,7 +8,18 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Каталог</a>
+<!--                            <a class="nav-link active" href="#">Каталог</a>-->
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    Каталог
+                                </button>
+                                <ul class="dropdown-menu">
+                                    {% for category in categories %}
+                                    <li><a class="dropdown-item" href="#section{{ category.pk }}">{{ category.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{% url 'catalog:contacts' %}"> <i

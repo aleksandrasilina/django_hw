@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load my_tags %}
 {% block content %}
 
 <!--Карусель начало-->
@@ -53,19 +54,15 @@
 
         {% for product in products %}
         <div class="col-4 mt-2">
-            <div class="card mb-2" id="section_1">
-                <img src="/media/{{ product.photo }}" width="" height="300rem" class="card-img-top mt-2">
+            <div class="card mb-2" id="section">
+                <img src="{{ product.photo| mymedia }}" width="" height="300rem" class="card-img-top mt-2">
                 <div class="card-body">
                     <h5 class="card-title">
                         <a class="custom-link text-decoration-none"
                            href="{% url 'catalog:product_detail' product.pk %}">{{ product.name }}</a>
                     </h5>
                     <p class="card-text">{{ product.description|slice:100 }}</p>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="#" class="btn btn-outline-success">В корзину</a>
-                        <a href="#" class="btn btn-outline-success"><i
-                                class="fa-solid fa-heart"></i></a>
-                    </div>
+                    <a href="#" class="btn btn-outline-success form-control">В корзину</a>
                 </div>
             </div>
         </div>

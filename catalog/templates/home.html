@@ -51,10 +51,8 @@
 <div class="d-flex mt-4">
     <div class="row">
         <h2 class="ms-4 display-6">Каталог</h2>
-        {% for category in categories %}
-        <h3 id="section{{ category.pk }}" class="ms-4">{{ category.name }}</h3>
-        {% include "includes/inc_pagination.html" with page=products %}
-        {% for product in category.products.all %}
+
+        {% for product in products %}
         <div class="col-4 mt-2">
             <div class="card mb-2" id="section">
                 <img src="{{ product.photo| mymedia }}" width="" height="300rem" class="card-img-top mt-2">
@@ -69,7 +67,7 @@
             </div>
         </div>
         {% endfor %}
-        {% endfor %}
+        {% include "includes/inc_pagination.html" with page=products %}
     </div>
 </div>
 {% include "includes/inc_add_product_form.html" with page=products %}

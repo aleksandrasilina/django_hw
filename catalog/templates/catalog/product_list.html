@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'catalog/base.html' %}
 {% load static %}
 {% load my_tags %}
 {% block content %}
@@ -52,23 +52,23 @@
     <div class="row">
         <h2 class="ms-4 display-6">Каталог</h2>
 
-        {% for product in products %}
+        {% for object in object_list %}
         <div class="col-4 mt-2">
             <div class="card mb-2" id="section">
-                <img src="{{ product.photo| mymedia }}" width="" height="300rem" class="card-img-top mt-2">
+                <img src="{{ object.photo| mymedia }}" width="" height="300rem" class="card-img-top mt-2">
                 <div class="card-body">
                     <h5 class="card-title">
                         <a class="custom-link text-decoration-none"
-                           href="{% url 'catalog:product_detail' product.pk %}">{{ product.name }}</a>
+                           href="{% url 'catalog:product_detail' object.pk %}">{{ object.name }}</a>
                     </h5>
-                    <p class="card-text">{{ product.description|slice:100 }}</p>
+                    <p class="card-text">{{ object.description|slice:100 }}</p>
                     <a href="#" class="btn btn-outline-success form-control">В корзину</a>
                 </div>
             </div>
         </div>
         {% endfor %}
-        {% include "includes/inc_pagination.html" with page=products %}
+        {% include "catalog/includes/inc_pagination.html" with page=object_list %}
     </div>
 </div>
-{% include "includes/inc_add_product_form.html" with page=products %}
+{% include "catalog/includes/inc_add_product_form.html" with page=object_list %}
 {% endblock %}

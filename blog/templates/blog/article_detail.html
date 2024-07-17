@@ -5,13 +5,16 @@
 <div class="container">
     <div class="row">
         <div class="card mx-auto" style="width: 500px;">
+            <div class="card-header">
+                    <h3 class="card-title">{{ object.title }} ({{ object.slug }})</h3>
+            </div>
             <img src="/media/{{ object.preview}}" class="card-img-top mt-2">
             <div class="card-body">
-                <h5 class="card-title">{{ object.title }}</h5>
                 <p class="card-text">{{ object.content }}</p>
                 <p class="card-text">Создана: {{ object.created_at }}</p>
                 <p class="card-text">Опубликована: {% if object.is_published %}да{% else %}нет{% endif %}</p>
                 <a href="{% url 'blog:articles_list' %}" class="btn btn-outline-success">Назад</a>
+                <div class="card-footer"> Количество просмотров: {{ object.views_count}}</div>
             </div>
         </div>
     </div>

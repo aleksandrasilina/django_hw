@@ -4,6 +4,7 @@ from pprint import pprint
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
+from django.views.generic import DetailView, ListView
 
 from catalog.forms import UploadFileForm
 from catalog.models import Product
@@ -20,44 +21,17 @@ def save_product_data(product_data):
         json.dump(product_data, file, ensure_ascii=False, indent=4)
 
 
-def home(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        description = request.POST.get('description')
-        category = request.POST.get('category')
-        price = request.POST.get('price')
-
-        form = UploadFileForm(request.POST, request.FILES)
-
-        product_data = {
-            'name': name,
-            'description': description,
-            'photo': f'catalog/photo/{request.FILES['file'].name}',
-            'category': category,
-            'price': price
-        }
-        save_product_data(product_data)
-
-        if form.is_valid():
-            handle_uploaded_file(form.cleaned_data['file'])
-            return HttpResponseRedirect('/')
-    else:
-        form = UploadFileForm()
-
-    # pprint(Product.objects.order_by("created_at")[1:6:-1])
-
-    object_list = Product.objects.all()
-    paginator = Paginator(object_list, 3)
-    page = request.GET.get('page')
-    products = paginator.get_page(page)
-
-    context = {
-        "products": products,
-        'page': page,
-        'form': form,
-        'title': 'Главная',
+class ProductListView(ListView):
+    model = Product
+    paginate_by = 3
+    extra_context = {
+        'title': 'Главная'
     }
-    return render(request, 'home.html', context)
+
+
+class ProductDetailView(DetailView):
+    model = Product
+
 
 
 def contacts(request):
@@ -80,10 +54,4 @@ def contacts(request):
     return render(request, 'contacts.html', context)
 
 
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    context = {
-        "product": product,
-        'title': Product.objects.get(pk=pk)
-    }
-    return render(request, 'product_detail.html', context)
+

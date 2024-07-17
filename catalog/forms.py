@@ -1,4 +1,9 @@
-from django.forms import forms
+from django import forms
 
-class UploadFileForm(forms.Form):
-    file = forms.FileField(label="Файл")
+from catalog.models import Contact
+
+
+class ContactUsForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('name', 'email', 'message',)

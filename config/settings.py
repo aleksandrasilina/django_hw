@@ -19,6 +19,8 @@ INSTALLED_APPS = [
     'catalog',
     "crispy_forms",
     "crispy_bootstrap5",
+    "blog"
+
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

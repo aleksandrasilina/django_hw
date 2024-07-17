@@ -15,8 +15,7 @@
                 <img src="/media/{{ object.preview }}" width="" height="300rem" class="card-img-top mt-2">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <a class="custom-link text-decoration-none"
-                           href="{% url 'catalog:product_detail' object.pk %}">{{ object.title }}</a>
+                        {{ object.title }}
                     </h5>
                     <p class="card-text">{{ object.content|slice:100 }}</p>
                     <div class="btn-group">

@@ -3,16 +3,30 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="card mx-auto" style="width: 500px;">
-            <img src="{{ object.photo| mymedia }}" class="card-img-top mt-2">
-            <div class="card-body">
-                <h5 class="card-title">{{ object.name }}</h5>
-                <p class="card-text">{{ object.description }}</p>
-                <p class="card-text">Категория: {{ object.category }}</p>
-                <p class="card-text">Цена: {{ object.price }} руб/кг</p>
-                <a href="{% url 'catalog:product_list' %}" class="btn btn-outline-success">Назад</a>
-                <a href="#" class="btn btn-outline-success">В корзину</a>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td class="display-6">{{ object.name }}</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ object.photo| mymedia }}" class="card-img-top mt-2"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ object.description }}</td>
+                        </tr>
+                        <tr>
+                            <td>Категория: {{ object.category }}</td>
+                        </tr>
+                        <tr>
+                            <td>Цена: {{ object.price }} руб/кг</td>
+                        </tr>
+                    </table>
+                    <a href="{% url 'catalog:product_list' %}" class="btn btn-outline-success">Назад</a>
+                    <a href="#" class="btn btn-outline-success">В корзину</a>
+                </div>
             </div>
         </div>
     </div>

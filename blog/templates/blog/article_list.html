@@ -1,28 +1,28 @@
 {% extends 'catalog/base.html' %}
+{% load my_tags %}
 {% block content %}
-
-<div class="col-12 mb-5">
-    <a class="btn btn-outline-success" href="{% url 'blog:article_create' %}">Создать статью</a>
-</div>
 
 <div class="col-12 mt-4">
     <div class="row">
-        <h2 class="ms-4 display-6">Блог</h2>
-
+        <h2 class="display-6 mb-3">Блог</h2>
+            <p><a class="btn btn-outline-success" href="{% url 'blog:article_create' %}">Добавить статью</a></p>
         {% for object in object_list %}
         <div class="col-4 mt-2">
             <div class="card mb-2" id="section">
-                <img src="/media/{{ object.preview }}" width="" height="300rem" class="card-img-top mt-2">
+                <img src="{{ object.preview|mymedia }}" width="" height="300rem" class="card-img-top mt-2">
                 <div class="card-body">
                     <h5 class="card-title">
                         {{ object.title }}
                     </h5>
                     <p class="card-text">{{ object.content|slice:100 }}</p>
                     <div class="btn-group">
-                    <a class="btn btn-outline-success" href="{% url 'blog:article_detail' object.pk %}" role="button">Посмотреть</a>
-                    <a class="btn btn-outline-success" href="{% url 'blog:article_update' object.pk %}" role="button">Редактировать</a>
-                    <a class="btn btn-outline-danger" href="{% url 'blog:article_delete' object.pk %}" role="button">Удалить</a>
-                </div>
+                        <a class="btn btn-outline-success" href="{% url 'blog:article_detail' object.pk %}"
+                           role="button">Посмотреть</a>
+                        <a class="btn btn-outline-success" href="{% url 'blog:article_update' object.pk %}"
+                           role="button">Редактировать</a>
+                        <a class="btn btn-outline-danger" href="{% url 'blog:article_delete' object.pk %}"
+                           role="button">Удалить</a>
+                    </div>
                 </div>
             </div>
         </div>

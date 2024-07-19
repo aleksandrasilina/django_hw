@@ -50,8 +50,9 @@
 <!--Карусель конец-->
 <div class="d-flex mt-4">
     <div class="row">
-        <h2 class="ms-4 display-6">Каталог</h2>
-
+        <h2 class="display-6">Каталог</h2>
+            <p><a href="{% url 'catalog:product_create' %}" role="button" class="btn btn-outline-success">Добавить
+                продукт</a></p>
         {% for object in object_list %}
         <div class="col-4 mt-2">
             <div class="card mb-2" id="section">

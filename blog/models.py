@@ -1,5 +1,19 @@
 from django.db import models
 
+NULLABLE = {"blank": True, "null": True}
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=150, verbose_name="Автор", help_text="Введите имя автора", **NULLABLE)
+    email = models.EmailField(verbose_name='Почта')
+
+    def __str__(self):
+        return f'{self.name}({self.email})'
+
+    class Meta:
+        verbose_name = "Автор"
+        verbose_name_plural = "Авторы"
+
 
 class Article(models.Model):
     title = models.CharField(
@@ -30,7 +44,8 @@ class Article(models.Model):
         verbose_name="Количество просмотров",
         help_text="Укажите количество просмотров",
     )
-    slug = models.CharField(max_length=150, verbose_name="Slug", null=True, blank=True)
+    slug = models.CharField(max_length=150, verbose_name="Slug", **NULLABLE)
+    author = models.ForeignKey(Author, on_delete=models.SET_NULL, verbose_name="Автор", **NULLABLE)
 
     def __str__(self):
         return self.title

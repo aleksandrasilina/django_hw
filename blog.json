@@ -1,0 +1,88 @@
+[
+  {
+    "model": "blog.author",
+    "pk": 1,
+    "fields": {
+      "name": "Иван Пушкин",
+      "email": "ivan_pushkin@email.com"
+    }
+  },
+  {
+    "model": "blog.author",
+    "pk": 2,
+    "fields": {
+      "name": "Семен Чехов",
+      "email": "semen_chehov@email.com"
+    }
+  },
+  {
+    "model": "blog.article",
+    "pk": 1,
+    "fields": {
+      "title": "О лабрадорах",
+      "content": "Лабрадоры - это собаки",
+      "preview": "blog/previews/labrador.jpg",
+      "created_at": "2024-07-17T14:16:48.183Z",
+      "is_published": true,
+      "views_count": 2,
+      "slug": null,
+      "author": 1
+    }
+  },
+  {
+    "model": "blog.article",
+    "pk": 2,
+    "fields": {
+      "title": "О помидорах",
+      "content": "Помидоры бывают разные",
+      "preview": "blog/previews/tomatos.jpg",
+      "created_at": "2024-07-17T14:22:24.675Z",
+      "is_published": true,
+      "views_count": 100,
+      "slug": null,
+      "author": 2
+    }
+  },
+  {
+    "model": "blog.article",
+    "pk": 4,
+    "fields": {
+      "title": "О морковках",
+      "content": "Морковь растет под землей",
+      "preview": "blog/previews/carrot.jpg",
+      "created_at": "2024-07-17T14:59:21.027Z",
+      "is_published": true,
+      "views_count": 8,
+      "slug": null,
+      "author": 2
+    }
+  },
+  {
+    "model": "blog.article",
+    "pk": 5,
+    "fields": {
+      "title": "О брокколи",
+      "content": "Брокколи - это капуста",
+      "preview": "blog/previews/broccoli.jpg",
+      "created_at": "2024-07-17T15:05:55.425Z",
+      "is_published": true,
+      "views_count": 4,
+      "slug": null,
+      "author": 2
+    }
+  },
+  {
+    "model": "blog.article",
+    "pk": 6,
+    "fields": {
+      "title": "Об обезьянах",
+      "content": "Обезьяны лазят по лианам",
+      "preview": "blog/previews/images.jpg",
+      "created_at": "2024-07-17T20:23:33.707Z",
+      "is_published": true,
+      "views_count": 6,
+      "slug": "ob-obezyanah",
+      "author": 1
+    }
+  }
+]

@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView, UpdateView, DeleteView, C
 from pytils.translit import slugify
 
 from blog.models import Article
+from blog.services import send_order_email
 
 
 class ArticleListView(ListView):
@@ -26,12 +27,14 @@ class ArticleDetailView(DetailView):
         self.object = super().get_object(queryset)
         self.object.views_count += 1
         self.object.save()
+        if self.object.views_count >= 100:
+            send_order_email(self.object)
         return self.object
 
 
 class ArticleCreateView(CreateView):
     model = Article
-    fields = ('title', 'content', 'preview', 'is_published',)
+    fields = ('title', 'author', 'content', 'preview', 'is_published',)
     success_url = reverse_lazy('blog:articles_list')
 
     def form_valid(self, form):
@@ -44,7 +47,7 @@ class ArticleCreateView(CreateView):
 
 class ArticleUpdateView(UpdateView):
     model = Article
-    fields = ('title', 'content', 'preview', 'is_published',)
+    fields = ('title', 'author', 'content', 'preview', 'is_published',)
     success_url = reverse_lazy('blog:articles_list')
 
     def get_success_url(self):

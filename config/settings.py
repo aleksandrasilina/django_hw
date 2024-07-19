@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -64,6 +65,7 @@ DATABASES = {
         'NAME': 'django_hw',
         'USER': 'postgres',
         'PASSWORD': '123456'
+        # 'PASSWORD': os.getenv("BD_PASSWORD")
     }
 }
 
@@ -98,3 +100,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'al.a.silina@yandex.ru'
+EMAIL_HOST_PASSWORD = 'opvgwqpexxtwtgue'
+
+EMAIL_SERVER = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = EMAIL_HOST_USER

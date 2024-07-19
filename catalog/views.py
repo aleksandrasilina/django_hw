@@ -30,7 +30,8 @@ class ContactView(TemplateView):
         'title': 'Контакты'
     }
 
-    def post(self, request):
+    @staticmethod
+    def post(request):
         form = ContactUsForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']

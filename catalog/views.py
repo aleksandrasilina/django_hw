@@ -24,20 +24,6 @@ class ProductCreateView(CreateView):
     success_url = reverse_lazy('catalog:product_list')
 
 
-# def contacts(request):
-#     context = {
-#         'title': 'Контакты'
-#     }
-#
-#     if request.method == 'POST':
-#         name = request.POST.get('name')
-#         email = request.POST.get('email')
-#         message = request.POST.get('message')
-#         with open('messages.txt', 'a') as file:
-#             file.write(f'{name}({email}): {message}\n')
-#
-#     return render(request, 'contacts.html', context)
-
 class ContactView(TemplateView):
     template_name = 'catalog/contacts.html'
     extra_context = {
@@ -57,4 +43,3 @@ class ContactView(TemplateView):
             ContactUsForm()
 
         return render(request, 'catalog/contacts.html', {'form': form})
-

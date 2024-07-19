@@ -1,7 +1,5 @@
-Online shop website
+Онлайн_магазин овощей и фруктов
+Блог о природе
 
-Наполнение данными python manage.py fill_blog
-
-Добавление своего продукта:
-1. Заполните форму на главной странице
-2. Выполните команду: python manage.py add_product
+Наполнение каталога продуктами: python manage.py fill
+Наполнение блога статьями: python manage.py blog_fill

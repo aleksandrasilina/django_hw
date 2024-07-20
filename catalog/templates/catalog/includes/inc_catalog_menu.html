@@ -1,14 +1,13 @@
 <div class="container-fluid">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow">
-        <img src="/static/images/favicon.png" width="30" alt="">
-        <h5><a class="nav-link mt-2 fw-normal ms-2" href="{% url 'catalog:product_list' %}">Магазин</a></h5>
+        <img src="/static/images/favicon.png" width="30">
+        <h5><a class="nav-link mt-2 fw-normal ms-2" href="{% url 'catalog:product_list' %}">Огород</a></h5>
 
         <nav class="navbar navbar-expand-lg ms-5 ">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <!--                            <a class="nav-link active" href="#">Каталог</a>-->
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -16,8 +15,7 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     {% for category in categories %}
-                                    <li><a class="dropdown-item" href="#section{{ category.pk }}">{{ category.name
-                                        }}</a></li>
+                                    <li><a class="dropdown-item" href="#section{{ category.pk }}">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>

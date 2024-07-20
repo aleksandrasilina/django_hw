@@ -31,6 +31,11 @@ class ArticleDetailView(DetailView):
             send_order_email(self.object)
         return self.object
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = context['article'].title
+        return context
+
 
 class ArticleCreateView(CreateView):
     model = Article

@@ -63,8 +63,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_hw',
         'USER': 'postgres',
-        'PASSWORD': '123456'
-        # 'PASSWORD': os.getenv("BD_PASSWORD")
+        'PASSWORD': os.environ.get("BD_PASSWORD")
     }
 }
 
@@ -106,7 +105,7 @@ EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'al.a.silina@yandex.ru'
-EMAIL_HOST_PASSWORD = 'opvgwqpexxtwtgue'
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 EMAIL_SERVER = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

@@ -1,11 +1,12 @@
 {% extends 'catalog/base.html' %}
+{% load bootstrap_tags %}
 {% block content %}
 
 <div class="container">
-    <div class="row justify-content-around">
+    <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="card mb-4 box-shadow">
-                <div class="card-header text-muted" style="background-color: #FFFFFF">
+            <div class="card mb-4 box-shadow" style="height: 96%">
+                <div class="card-header text-muted">
                     <h4 class="my-0 font-weight-normal">Контактная информация</h4>
                 </div>
                 <div class="card-body">
@@ -20,24 +21,13 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="card mb-4 box-shadow">
-                <div class="card-header text-muted" style="background-color: #FFFFFF">
+                <div class="card-header text-muted" style="height: 96%">
                     <h4 class="my-0 font-weight-normal">Свяжитесь с нами</h4>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="" class="form-floating">
+                    <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <div class="mb-3">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя"
-                                   required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" name="email" class="form-control" id="email"
-                                   placeholder="Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea name="message" class="form-control" id="message"
-                                      placeholder="Сообщение" required></textarea>
-                        </div>
+                        {{ form|as_bootstrap_inline}}
                         <button type="submit" class="btn btn-lg btn-block btn-outline-success">Отправить</button>
                     </form>
                 </div>

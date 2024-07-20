@@ -35,6 +35,11 @@ class ContactView(TemplateView):
         'title': 'Контакты'
     }
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = ContactUsForm()
+        return context
+
     @staticmethod
     def post(request):
         form = ContactUsForm(request.POST)

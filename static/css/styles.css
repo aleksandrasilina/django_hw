@@ -6,15 +6,9 @@ img[class*=d-block]{
 }
 
 .custom-link {
-color: #293133;
+    color: #293133;
 }
 a:hover {
-color: green;
+    color: green;
 }
 
-.nav-link {
-color: red;
-}
-a:hover {
-color: green;
-}

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, TemplateView, CreateView
 
-from catalog.forms import ContactUsForm
+from catalog.forms import ContactUsForm, ProductForm
 from catalog.models import Product
 
 
@@ -25,7 +25,7 @@ class ProductDetailView(DetailView):
 
 class ProductCreateView(CreateView):
     model = Product
-    fields = ('name', 'description', 'photo', 'category', 'price')
+    form_class = ProductForm
     success_url = reverse_lazy('catalog:product_list')
 
 

@@ -44,7 +44,7 @@ class Article(models.Model):
         verbose_name="Опубликовано",
         help_text="Укажите, опубликована статья или нет",
     )
-    views_count = models.IntegerField(
+    views_count = models.PositiveIntegerField(
         default=0,
         verbose_name="Количество просмотров",
         help_text="Укажите количество просмотров",

@@ -19,7 +19,6 @@ INSTALLED_APPS = [
 
     'catalog',
     "blog",
-    'django_forms_bootstrap',
     "debug_toolbar",
 
 ]

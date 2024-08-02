@@ -1,9 +1,15 @@
 from django import forms
 
-from catalog.models import Contact
+from catalog.models import Contact, Product
 
 
 class ContactUsForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ('name', 'email', 'message',)
+        fields = '__all__'
+
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        exclude = ('created_at', 'updated_at',)

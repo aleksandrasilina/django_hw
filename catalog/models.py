@@ -111,3 +111,10 @@ class Version(models.Model):
         verbose_name="Текущая версия",
         help_text="Укажите, является ли версия продукта текущей"
     )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Версия"
+        verbose_name_plural = "Версии"

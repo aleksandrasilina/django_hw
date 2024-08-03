@@ -18,7 +18,9 @@ class Category(models.Model):
     @classmethod
     def truncate_table_restart_id(cls):
         with connection.cursor() as cursor:
-            cursor.execute(f'TRUNCATE TABLE {cls._meta.db_table} RESTART IDENTITY CASCADE')
+            cursor.execute(
+                f"TRUNCATE TABLE {cls._meta.db_table} RESTART IDENTITY CASCADE"
+            )
 
     class Meta:
         verbose_name = "Категория"
@@ -37,7 +39,7 @@ class Product(models.Model):
         upload_to="catalog/photo",
         verbose_name="Фото",
         help_text="Загрузите фото продукта",
-        **NULLABLE
+        **NULLABLE,
     )
     category = models.ForeignKey(
         Category,
@@ -45,9 +47,14 @@ class Product(models.Model):
         **NULLABLE,
         verbose_name="Категория",
         help_text="Введите категорию продукта",
-        related_name="products"
+        related_name="products",
     )
-    price = models.DecimalField(decimal_places=2, max_digits=10, verbose_name="Цена", help_text="Введите цену продукта")
+    price = models.DecimalField(
+        decimal_places=2,
+        max_digits=10,
+        verbose_name="Цена",
+        help_text="Введите цену продукта",
+    )
     created_at = models.DateTimeField(
         default=timezone.now,
         verbose_name="Дата создания",
@@ -69,7 +76,9 @@ class Product(models.Model):
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Имя контакта", help_text="Введите имя контакта")
+    name = models.CharField(
+        max_length=100, verbose_name="Имя контакта", help_text="Введите имя контакта"
+    )
     email = models.EmailField(verbose_name="Email", help_text="Введите email")
     message = models.TextField(verbose_name="Сообщение", help_text="Введите сообщение")
 
@@ -80,3 +89,25 @@ class Contact(models.Model):
         verbose_name = "Контакт"
         verbose_name_plural = "Контакты"
         ordering = ("name",)
+
+
+class Version(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        verbose_name="Продукт",
+        help_text="Выберите продукт",
+    )
+    number = models.PositiveIntegerField(
+        verbose_name="Номер версии", help_text="Введите номер версии"
+    )
+    name = models.CharField(
+        max_length=150,
+        verbose_name="Название версии",
+        help_text="Введите название версии",
+    )
+    is_current = models.BooleanField(
+        default=True,
+        verbose_name="Текущая версия",
+        help_text="Укажите, является ли версия продукта текущей"
+    )

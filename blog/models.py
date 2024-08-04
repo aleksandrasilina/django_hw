@@ -48,6 +48,7 @@ class Article(models.Model):
         default=0,
         verbose_name="Количество просмотров",
         help_text="Укажите количество просмотров",
+        # editable=False
     )
     slug = models.CharField(max_length=150, verbose_name="Slug", **NULLABLE)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, verbose_name="Автор", **NULLABLE)

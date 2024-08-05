@@ -40,7 +40,7 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
     def clean_name(self):
         name = self.cleaned_data['name']
         for word in FORBIDDEN_WORDS:
-            if word in name:
+            if word in name.lower():
                 raise forms.ValidationError('Имя продукта содержит запрещенное слово')
         return name
 

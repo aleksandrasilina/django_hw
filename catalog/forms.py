@@ -32,7 +32,9 @@ class ContactUsForm(StyleFormMixin, forms.ModelForm):
         fields = '__all__'
 
 
-class ProductForm(StyleFormMixin, forms.ModelForm):
+class ProductForm(forms.ModelForm):
+    error_css_class = "is-invalid"
+
     class Meta:
         model = Product
         exclude = ('created_at', 'updated_at',)
@@ -52,7 +54,9 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
         return description
 
 
-class VersionForm(StyleFormMixin, forms.ModelForm):
+class VersionForm(forms.ModelForm):
+    error_css_class = "is-invalid"
+
     class Meta:
         model = Product
         exclude = '__all__'

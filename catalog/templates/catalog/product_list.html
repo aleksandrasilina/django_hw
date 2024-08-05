@@ -63,8 +63,15 @@
                            href="{% url 'catalog:product_detail' object.pk %}">{{ object.name }}</a>
                     </h5>
                     <p class="card-text">{{ object.description|slice:100 }}</p>
+                    {% if object.version %}
+                    <p class="card-text">Название версии: {{ object.version }}</p>
+                    <p class="card-text">Номер версии: {{ object.version.number }}</p>
+                    {% else %}
+                    <p class="card-text">Название версии: Обычные</p>
+                    <p class="card-text">Номер версии: 1</p>
+                    {% endif %}
                     <a href="#" class="btn btn-outline-success">В корзину</a>
-                    <a href="{% url 'catalog:product_update' object.pk %}" class="btn btn-outline-success">Редактиовать</a>
+                    <a href="{% url 'catalog:product_update' object.pk %}" class="btn btn-outline-success">Редактировать</a>
                 </div>
             </div>
         </div>

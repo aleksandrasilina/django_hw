@@ -106,8 +106,8 @@ class Version(models.Model):
         verbose_name="Название версии",
         help_text="Введите название версии",
     )
-    is_current = models.BooleanField(
-        default=True,
+    is_active = models.BooleanField(
+        default=False,
         verbose_name="Текущая версия",
         help_text="Укажите, является ли версия продукта текущей"
     )

@@ -14,7 +14,7 @@ class StyleFormMixin:
                 field.widget.attrs['class'] = 'form-control'
 
 
-class ArticleForm(StyleFormMixin, forms.ModelForm):
-    class Meta:
-        model = Article
-        exclude = ('created_at', 'views_count', 'slug')
+# class ArticleForm(StyleFormMixin, forms.ModelForm):
+#     class Meta:
+#         model = Article
+#         exclude = ('created_at', 'views_count', 'slug')

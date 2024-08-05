@@ -2,7 +2,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from pytils.translit import slugify
 
-from blog.forms import ArticleForm
+# from blog.forms import ArticleForm
 from blog.models import Article
 from blog.services import send_order_email
 
@@ -39,7 +39,8 @@ class ArticleDetailView(DetailView):
 
 class ArticleCreateView(CreateView):
     model = Article
-    form_class = ArticleForm
+    # form_class = ArticleForm
+    fields = ('title', 'content', 'preview', 'author')
     success_url = reverse_lazy('blog:articles_list')
 
     def form_valid(self, form):
@@ -52,7 +53,8 @@ class ArticleCreateView(CreateView):
 
 class ArticleUpdateView(UpdateView):
     model = Article
-    form_class = ArticleForm
+    # form_class = ArticleForm
+    fields = ('title', 'content', 'preview', 'author')
     success_url = reverse_lazy('blog:articles_list')
 
     def get_success_url(self):

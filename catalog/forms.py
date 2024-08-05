@@ -3,7 +3,7 @@ from django.forms import BooleanField
 
 from catalog.models import Contact, Product
 
-FORBIDDEN_WORDS = [
+FORBIDDEN_WORDS = (
     'казино',
     'криптовалюта',
     'крипта',
@@ -13,7 +13,7 @@ FORBIDDEN_WORDS = [
     'обман',
     'полиция',
     'радар'
-]
+)
 
 
 class StyleFormMixin:
@@ -43,7 +43,6 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
             if word in name:
                 raise forms.ValidationError('Имя продукта содержит запрещенное слово')
         return name
-
 
     def clean_description(self):
         description = self.cleaned_data['description']
